@@ -5,12 +5,3 @@
 .change-color {
     filter: invert(100%);
 }
-
-/* halaman utama start */
-.item {
-    @apply bg-white w-56 shadow-xl rounded-sm;
-}
-.item-gambar {
-    @apply h-40 mx-auto;
-}
-/* halaman utama end */
