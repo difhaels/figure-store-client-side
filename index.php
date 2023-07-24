@@ -1,8 +1,7 @@
 <?php
 require('function/functions.php');
 
-// menampilkan item
-$items = read("SELECT * FROM item");
+$items = read(sortItem($_GET['sort']));
 ?>
 
 <!DOCTYPE html>
@@ -31,22 +30,22 @@ $items = read("SELECT * FROM item");
         </div>
     </div>
     <div class="px-3 lg:px-10 pt-24 lg:pt-32 pb-10 flex items-center">
-        <form action="" id="sortForm">
+        <form id="sortForm" action="" method="get">
             <label for="sort">Sort By</label>
             <select id="sort" name="sort" class="mx-2 px-3 py-1 rounded-lg">
-                <option value="newest">Newest</option>
-                <option value="oldest">Oldest</option>
-                <option value="highest">Highest Price</option>
-                <option value="lowest">Lowest Price</option>
+                <option value="">Normal</option>
+                <option value="newest" <?php if ($_GET['sort'] === 'newest') echo 'selected'; ?>>Newest</option>
+                <option value="oldest" <?php if ($_GET['sort'] === 'oldest') echo 'selected'; ?>>Oldest</option>
+                <option value="highest" <?php if ($_GET['sort'] === 'highest') echo 'selected'; ?>>Highest Price</option>
+                <option value="lowest" <?php if ($_GET['sort'] === 'lowest') echo 'selected'; ?>>Lowest Price</option>
             </select>
         </form>
         <script>
-            const formElement = document.getElementById('sortForm');
-            const selectElement = document.getElementById('cars');
+            const selectElement = document.getElementById('sort');
 
             selectElement.addEventListener('change', function() {
                 // Submit form secara otomatis saat pilihan dipilih
-                formElement.submit();
+                document.getElementById('sortForm').submit();
             });
         </script>
     </div>

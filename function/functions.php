@@ -13,3 +13,22 @@ function read($query)
     }
     return $rows;
 }
+
+// function untuk sort item 
+function sortItem($selectedSort)
+{
+    global $koneksi;
+    if ($selectedSort === "newest") {
+        $query = "SELECT * FROM item ORDER BY id DESC";
+    } else if ($selectedSort === "oldest") {
+        $query = "SELECT * FROM item ORDER BY id ASC";
+    } else if ($selectedSort === "highest") {
+        $query = "SELECT * FROM item ORDER BY price DESC";
+    } else if ($selectedSort === "lowest") {
+        $query = "SELECT * FROM item ORDER BY price ASC";
+    } else {
+        $query = "SELECT * FROM item";
+    }
+    mysqli_query($koneksi, $query);
+    return $query;
+}
