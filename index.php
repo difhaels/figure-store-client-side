@@ -1,7 +1,7 @@
 <?php
 require('function/functions.php');
 
-$items = read(sortItem($_GET['sort']));
+$items = read(sortItem(isset($_GET['sort']) ? $_GET['sort'] : "SELECT * FROM item(run else)"));
 ?>
 
 <!DOCTYPE html>
@@ -34,10 +34,10 @@ $items = read(sortItem($_GET['sort']));
             <label for="sort">Sort By</label>
             <select id="sort" name="sort" class="mx-2 px-3 py-1 rounded-lg">
                 <option value="">Normal</option>
-                <option value="newest" <?php if ($_GET['sort'] === 'newest') echo 'selected'; ?>>Newest</option>
-                <option value="oldest" <?php if ($_GET['sort'] === 'oldest') echo 'selected'; ?>>Oldest</option>
-                <option value="highest" <?php if ($_GET['sort'] === 'highest') echo 'selected'; ?>>Highest Price</option>
-                <option value="lowest" <?php if ($_GET['sort'] === 'lowest') echo 'selected'; ?>>Lowest Price</option>
+                <option value="newest" <?php if (isset($_GET['sort']) && $_GET['sort'] === 'newest') echo 'selected'; ?>>Newest</option>
+                <option value="oldest" <?php if (isset($_GET['sort']) && $_GET['sort'] === 'oldest') echo 'selected'; ?>>Oldest</option>
+                <option value="highest" <?php if (isset($_GET['sort']) && $_GET['sort'] === 'highest') echo 'selected'; ?>>Highest Price</option>
+                <option value="lowest" <?php if (isset($_GET['sort']) && $_GET['sort'] === 'lowest') echo 'selected'; ?>>Lowest Price</option>
             </select>
         </form>
         <script>
