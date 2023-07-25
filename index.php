@@ -29,6 +29,7 @@ $items = read(sortItem(isset($_GET['sort']) ? $_GET['sort'] : "SELECT * FROM ite
             </a>
         </div>
     </div>
+
     <div class="px-3 lg:px-10 pt-24 lg:pt-32 pb-10 flex items-center">
         <form id="sortForm" action="" method="get">
             <label for="sort">Sort By</label>
@@ -49,13 +50,16 @@ $items = read(sortItem(isset($_GET['sort']) ? $_GET['sort'] : "SELECT * FROM ite
             });
         </script>
     </div>
+
     <div>
         <div class="flex flex-wrap gap-3 justify-center">
 
             <?php foreach ($items as $item) : ?>
                 <div class="bg-white w-44 lg:w-56 shadow-xl rounded-sm">
-                    <img src="./img/item/<?= $item["image"] ?>" alt="<?= $item["name"] ?>" class="h-40 mx-auto py-3 lg:py-1">
-                    <h1 class="text-center py-2"><?= $item["name"] ?></h1>
+                    <a href="item/detail.php?id=<?= $item['id'] ?>">
+                        <img src="./img/item/<?= $item["image"] ?>" alt="<?= $item["name"] ?>" class="h-40 mx-auto py-3 lg:py-1">
+                        <h1 class="text-center py-2"><?= $item["name"] ?></h1>
+                    </a>
                     <div class="px-5 flex justify-center items-center gap-5 mb-4">
                         <a href="item/update.php?id=<?= $item['id'] ?>" class="bg-[#E7230D] text-white px-3 py-2 rounded-[4px]">
                             <div class="text-center text-[13px]">
