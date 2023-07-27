@@ -5,3 +5,36 @@
 .change-color {
     filter: invert(100%);
 }
+
+
+
+/*  Footer Start */
+.footer-parent {
+    @apply bg-slate-800 pt-24 pb-12;
+  }
+  .footer-flex {
+    @apply items-center justify-center md:flex;
+  }
+  .footer-left {
+    @apply mb-12 w-full px-4 font-medium text-slate-300 md:max-w-xs;
+  }
+  .footer-left-name {
+    @apply mb-5 text-4xl font-bold ;
+  }
+  .footer-right {
+    @apply mb-12 w-full md:max-w-xs;
+  }
+  .footer-right-sosmed {
+    @apply mb-5 flex items-center justify-center;
+  }
+  .footer-right-sosmed-icon {
+    @apply mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300  hover:text-white;
+  }
+  .footer-dibuat {
+    @apply pt-7 text-center text-xs font-medium text-slate-500
+  }
+  .footer-name {
+    @apply font-bold ;
+  }
+  /*  Footer End */
+  
