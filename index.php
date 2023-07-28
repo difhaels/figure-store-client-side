@@ -12,6 +12,7 @@ $items = read(sortItem(isset($_GET['sort']) ? $_GET['sort'] : "SELECT * FROM ite
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Figure Store Client Site</title>
     <link rel="stylesheet" href="./css/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -30,7 +31,14 @@ $items = read(sortItem(isset($_GET['sort']) ? $_GET['sort'] : "SELECT * FROM ite
         </div>
     </nav>
 
-    <div class="px-3 lg:px-10 pt-24 lg:pt-32 pb-10 flex items-center">
+    <div class="px-3 lg:px-16 pt-24 lg:pt-32 pb-10 flex flex-wrap items-center justify-between gap-3">
+        <!-- Search -->
+        <form action="" method="get">
+            <input type="text" name="keyword" placeholder="Cari Figure disini" autocomplete="off" class="px-1 py-1 border-2 focus:outline-none">
+            <button type="submit" name="cari" class="bg-sky-400 text-slate-100 px-3 py-1">Search</button>
+        </form>
+
+        <!-- Sort -->
         <form id="sortForm" action="" method="get">
             <label for="sort">Sort By</label>
             <select id="sort" name="sort" class="mx-2 px-3 py-1 rounded-lg">
