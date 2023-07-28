@@ -73,7 +73,7 @@ if (isset($_POST["login"])) {
                         <input type="checkbox" name="remember" id="remember">
                         <label for="remember">Remember me</label>
                     </div>
-                    <a href="register.php">register</a>
+                    <a href="register.php" class="text-red-500">register</a>
                 </li>
                 <li class="py-1">
                     <button type="submit" name="login" class="button-yellow">Login</button>
