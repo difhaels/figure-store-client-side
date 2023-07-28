@@ -1,7 +1,11 @@
 <?php
 session_start();
-if (isset($_SESSION["login"])) {
-} else {
+// set cookie | cek ada cookie atau tidak
+if (isset($_COOKIE['key'])) {
+    $_SESSION['login'] = true;
+}
+
+if (!isset($_SESSION["login"])) {
     header("Location: ./login.php");
 }
 ?>

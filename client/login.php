@@ -26,7 +26,7 @@ if (isset($_POST["login"])) {
             // cek remember me di centang tidak
             if (isset($_POST['remember'])) {
                 // memberi waktu 3600 detik jika di centang
-                setcookie('key', $row['username'], time() + 3600);
+                setcookie('key', $row['username'], time() + 360000);
             }
 
             // pindah ke halaman index
