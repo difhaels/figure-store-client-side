@@ -43,7 +43,7 @@ if (!isset($_SESSION["login"])) {
         <h1>No Whatsapp: <?= $_SESSION["nowa"] ?></h1>
         <h1>Alamat : <?= $_SESSION["alamat"] ?></h1>
         <h1>Email : <?= $_SESSION["email"] ?></h1>
-        <div>
+        <div class="mt-5">
             <a class="button-yellow">Edit</a>
             <a href="logout.php" class="button-red">Logout</a>
         </div>
