@@ -29,7 +29,7 @@ if (isset($_GET['search'])) {
             <h1 class="text-xs lg:text-base">.client side</h1>
         </div>
         <div class="flex gap-2 lg:gap-6">
-            <a href="">
+            <a href="./client/account.php">
                 <img src="./img/icon/user.png" class="w-[35px] change-color">
             </a>
             <a href="">
