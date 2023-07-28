@@ -14,6 +14,16 @@ function read($query)
     return $rows;
 }
 
+// function untuk search item 
+function search($key)
+{
+    global $koneksi;
+    $query = "SELECT * FROM item WHERE name LIKE '%$key%'";
+    mysqli_query($koneksi, $query);
+    return $query;
+}
+
+
 // function untuk sort item 
 function sortItem($selectedSort)
 {

@@ -1,7 +1,14 @@
 <?php
 require('function/functions.php');
 
-$items = read(sortItem(isset($_GET['sort']) ? $_GET['sort'] : "SELECT * FROM item(run else)"));
+if (isset($_GET['search'])) {
+    $items = read(search($_GET["key"]));
+} else if (isset($_GET['sort'])) {
+    $items = read(sortItem($_GET['sort']));
+} else {
+    $items = read("SELECT * FROM item");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -34,8 +41,8 @@ $items = read(sortItem(isset($_GET['sort']) ? $_GET['sort'] : "SELECT * FROM ite
     <div class="px-3 lg:px-16 pt-24 lg:pt-32 pb-10 flex flex-wrap items-center justify-between gap-3">
         <!-- Search -->
         <form action="" method="get">
-            <input type="text" name="keyword" placeholder="Cari Figure disini" autocomplete="off" class="px-1 py-1 border-2 focus:outline-none">
-            <button type="submit" name="cari" class="bg-sky-400 text-slate-100 px-3 py-1">Search</button>
+            <input type="text" name="key" placeholder="Cari Figure disini" autocomplete="off" class="px-1 py-1 border-2 focus:outline-none">
+            <button type="submit" name="search" class="bg-sky-400 text-slate-100 px-3 py-1">Search</button>
         </form>
 
         <!-- Sort -->
