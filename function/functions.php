@@ -18,7 +18,7 @@ function read($query)
 function search($key)
 {
     global $koneksi;
-    $query = "SELECT * FROM item WHERE name LIKE '%$key%'";
+    $query = "SELECT * FROM item WHERE name LIKE '%$key%' OR source LIKE '%$key%'";
     mysqli_query($koneksi, $query);
     return $query;
 }

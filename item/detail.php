@@ -10,6 +10,8 @@ $item = read("SELECT * FROM item WHERE id = $id")[0];
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail</title>
     <link rel="stylesheet" href="../css/output.css">
 </head>
@@ -32,19 +34,19 @@ $item = read("SELECT * FROM item WHERE id = $id")[0];
         </div>
     </div>
 
-    <div class="pt-28 flex">
-        <div class="lg:w-1/2">
-            <img src="../img/item/<?= $item['image'] ?>" alt="<?= $item['code'] ?>" class="h-56 mx-auto">
+    <div class="pt-28 flex flex-wrap justify-center px-5">
+        <div class="px-10">
+            <img src="../img/item/<?= $item['image'] ?>" alt="<?= $item['code'] ?>" class="h-36 lg:h-56 mx-auto">
             <div class="flex justify-center gap-2 mt-2">
-                <img src="../img/sub/<?= $item['image1'] ?>" alt="<?= $item['code'] ?>1" class="h-56">
-                <img src="../img/sub/<?= $item['image2'] ?>" alt="<?= $item['code'] ?>2" class="h-56">
+                <img src="../img/sub/<?= $item['image1'] ?>" alt="<?= $item['code'] ?>1" class="h-36 lg:h-56">
+                <img src="../img/sub/<?= $item['image2'] ?>" alt="<?= $item['code'] ?>2" class="h-36 lg:h-56">
             </div>
             <div class="flex justify-center gap-2 mt-2">
-                <img src="../img/sub/<?= $item['image3'] ?>" alt="<?= $item['code'] ?>3" class="h-56">
-                <img src="../img/sub/<?= $item['image4'] ?>" alt="<?= $item['code'] ?>4" class="h-56">
+                <img src="../img/sub/<?= $item['image3'] ?>" alt="<?= $item['code'] ?>3" class="h-36 lg:h-56">
+                <img src="../img/sub/<?= $item['image4'] ?>" alt="<?= $item['code'] ?>4" class="h-36 lg:h-56">
             </div>
         </div>
-        <div class="lg:w-1/2 pt-[50px]">
+        <div class="px-10 pt-[50px]">
 
             <h1 class="text-xl"><?= $item['source'] ?> - <?= $item['name'] ?> - <?= $item['type'] ?> #<?= $item['code'] ?></h1>
             <a href="">
@@ -56,7 +58,7 @@ $item = read("SELECT * FROM item WHERE id = $id")[0];
 
             <div class="mt-7 px-5 border border-black rounded-lg w-fit bg-[#EEEDED]">
                 <h1 class="text-xl font-bold py-3">Transaction Flow</h1>
-                <div class="flex gap-3 pb-5">
+                <div class="flex flex-wrap justify-center gap-2 lg:gap-3 pb-5">
                     <div class="w-[160px] bg-white rounded-lg flex items-center justify-center gap-3 py-2">
                         <img src="../img/icon/transfer.png" alt="transfer" class="h-10">
                         <h1>Transfer</h1>
