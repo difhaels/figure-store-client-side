@@ -22,6 +22,11 @@ if (isset($_POST["login"])) {
         if ($password == $row["password"]) {
             // set session
             $_SESSION["login"] = true;
+            $_SESSION["username"] = $_POST["username"];
+            $_SESSION["notlp"] = $row["notlp"];
+            $_SESSION["nowa"] = $row["nowa"];
+            $_SESSION["alamat"] = $row["alamat"];
+            $_SESSION["email"] = $row["email"];
 
             // cek remember me di centang tidak
             if (isset($_POST['remember'])) {
