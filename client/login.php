@@ -1,13 +1,16 @@
 <?php
+session_start();
+require '../function/functions.php';
+
 // jika login ditekan
 if (isset($_POST["login"])) {
 
     // membuat variabel dari post agar lebih mudah
-    $usernameAdmin = $_POST["username"];
+    $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // cek database, table admin, yang username sama dengan input
-    $result  = mysqli_query($koneksi, "SELECT * FROM admin WHERE username = '$usernameAdmin'");
+    // cek database, table account , yang username sama dengan input
+    $result  = mysqli_query($koneksi, "SELECT * FROM client WHERE username = '$username'");
 
     // jika ditemukan username yang sama
     if (mysqli_num_rows($result) === 1) {
@@ -27,7 +30,7 @@ if (isset($_POST["login"])) {
             }
 
             // pindah ke halaman index
-            header("Location: ../index.php");
+            header("Location: ./account.php");
             exit;
         } else {
             echo "
@@ -51,7 +54,7 @@ if (isset($_POST["login"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account</title>
+    <title>login</title>
     <link rel="stylesheet" href="../css/output.css">
 </head>
 
@@ -65,9 +68,12 @@ if (isset($_POST["login"])) {
                 <li class="py-1">
                     <input type="password" name="password" placeholder="Password" class="w-full h-10 border-2 border-black rounded-lg px-3">
                 </li>
-                <li class="py-1 px-1">
-                    <input type="checkbox" name="remember" id="remember">
-                    <label for="remember">Remember me</label>
+                <li class="py-1 px-1 flex justify-between">
+                    <div>
+                        <input type="checkbox" name="remember" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="register.php">register</a>
                 </li>
                 <li class="py-1">
                     <button type="submit" name="login" class="button-yellow">Login</button>
