@@ -15,7 +15,7 @@ $items = read(sortItem(isset($_GET['sort']) ? $_GET['sort'] : "SELECT * FROM ite
 </head>
 
 <body>
-    <div class="bg-bg2 py-5 text-white flex items-center fixed w-full justify-between px-3 lg:px-10">
+    <nav class="bg-bg2 py-5 text-white flex items-center fixed w-full justify-between px-3 lg:px-10">
         <div class="flex items-end">
             <h1 class="font-extrabold text-xl lg:text-4xl">FIGURE STORE</h1>
             <h1 class="text-xs lg:text-base">.client side</h1>
@@ -28,7 +28,7 @@ $items = read(sortItem(isset($_GET['sort']) ? $_GET['sort'] : "SELECT * FROM ite
                 <img src="./img/icon/shop.png" class="w-[35px] change-color">
             </a>
         </div>
-    </div>
+    </nav>
 
     <div class="px-3 lg:px-10 pt-24 lg:pt-32 pb-10 flex items-center">
         <form id="sortForm" action="" method="get">
