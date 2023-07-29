@@ -12,6 +12,9 @@
 .button-red {
   @apply bg-[#E7230D] text-white px-5 py-2 rounded-xl
 }
+.button-green {
+  @apply bg-green-500 text-white px-5 py-2 rounded-xl
+}
 /*  Footer Start */
 .footer-parent {
     @apply bg-slate-800 pt-24 pb-12;

@@ -17,8 +17,8 @@ if (!isset($_SESSION["login"])) {
 </head>
 
 <body>
-    <nav class="bg-bg2 py-3 lg:py-5 text-white flex items-center fixed w-full justify-between px-3 lg:px-10">
-        <a href="../index.php">
+    <nav class="bg-bg2 py-3 lg:py-5 text-white flex items-center fixed z-50 w-full justify-between px-3 lg:px-10">
+        <a href="../item/detail.php?id=<?= $_POST['id'] ?>">
             <img src="../img/icon/back.png" alt="back" class="w-[25px] lg:w-[35px] change-color">
         </a>
         <div class="flex gap-3 lg:gap-6">
@@ -31,37 +31,72 @@ if (!isset($_SESSION["login"])) {
         </div>
     </nav>
 
-    <div>
+    <div class="flex justify-center flex-wrap">
+        <div class="w-full lg:w-2/5 pt-16 lg:pt-28 bg-slate-200 pb-10 lg:pb-24">
+            <div class="bg-white flex items-center w-[80%] mx-auto px-3 py-4 rounded-lg relative">
+                <img src="../img/item/<?= $_POST["image"] ?>" alt="image" class="h-16 pr-3">
+                <div class="pr-32">
+                    <h1 class="text-slate-600">Item info</h1>
+                    <h1><?= $_POST["type"] ?> <?= $_POST["source"] ?> <?= $_POST["name"] ?></h1>
+                </div>
+                <h1 class="font-bold absolute right-3">Rp<?= number_format($_POST['price'], 0, ',', '.'); ?></h1>
+            </div>
 
+            <div class="bg-white flex items-center w-[80%] mx-auto px-3 py-4 rounded-lg mt-3 relative">
+                <img src="../img/icon/cost.png" alt="image" class="h-16 pr-3">
+                <div>
+                    <h1 class="text-slate-600">Item info</h1>
+                    <h1>Shipping cost</h1>
+                </div>
+                <h1 class="font-bold absolute right-3">Rp 9.999.999</h1>
+            </div>
+
+            <div class="bg-slate-300 h-[2px] w-[80%] mx-auto mt-3"></div>
+
+            <div class="w-[80%] mx-auto mt-3 flex justify-between px-1 font-bold text-lg">
+                <h1>Total</h1>
+                <?php
+                $total = $_POST["price"] + 9999999;
+                ?>
+                <h1>Rp<?= number_format($total, 0, ',', '.'); ?></h1>
+            </div>
+
+        </div>
+
+        <div class="w-full lg:w-3/5 pt-16 lg:pt-28 px-10 pb-24">
+            <h1 class="text-slate-700 text-lg">Client Information</h1>
+            <form action="" method="" enctype="multipart/form-data">
+                <div class="border border-slate-600 px-3 py-2 rounded-lg mb-3">
+                    <h1 class="text-slate-600">Username</h1>
+                    <input type="text" placeholder="<?= $_SESSION["username"] ?>" class="w-full focus:outline-none">
+                </div>
+                <div class="border border-slate-600 px-3 py-1 rounded-lg mb-3">
+                    <h1 class="text-slate-600">Nomer telepon</h1>
+                    <input type="text" placeholder="<?= $_SESSION["notlp"] ?>" class="w-full focus:outline-none">
+                </div>
+                <div class="border border-slate-600 px-3 py-1 rounded-lg mb-3">
+                    <h1 class="text-slate-600">Nomer whatsapp</h1>
+                    <input type="text" placeholder="<?= $_SESSION["nowa"] ?>" class="w-full focus:outline-none">
+                </div>
+                <div class="border border-slate-600 px-3 py-1 rounded-lg mb-3">
+                    <h1 class="text-slate-600">Email</h1>
+                    <input type="text" placeholder="<?= $_SESSION["email"] ?>" class="w-full focus:outline-none">
+                </div>
+                <div class="border border-slate-600 px-3 py-1 rounded-lg mb-3">
+                    <h1 class="text-slate-600">Alamat</h1>
+                    <input type="text" placeholder="<?= $_SESSION["alamat"] ?>" class="w-full focus:outline-none">
+                </div>
+                <div>
+                    <label for="payment">Upload proof of payment</label>
+                    <input type="file" name="payment" id="payment">
+                </div>
+                <button type="submit" name="" class="button-green">Send</button>
+            </form>
+
+        </div>
     </div>
 
-    <div class="pt-16 lg:pt-28 px-10">
-        <h1 class="text-slate-700 text-lg">Client Information</h1>
-        <form action="">
-            <div class="border border-slate-600 px-3 py-2 rounded-lg mb-3">
-                <h1 class="text-slate-600">Username</h1>
-                <input type="text" placeholder="<?= $_SESSION["username"] ?>" class="w-full focus:outline-none">
-            </div>
-            <div class="border border-slate-600 px-3 py-1 rounded-lg mb-3">
-                <h1 class="text-slate-600">Nomer telepon</h1>
-                <input type="text" placeholder="<?= $_SESSION["notlp"] ?>" class="w-full focus:outline-none">
-            </div>
-            <div class="border border-slate-600 px-3 py-1 rounded-lg mb-3">
-                <h1 class="text-slate-600">Nomer whatsapp</h1>
-                <input type="text" placeholder="<?= $_SESSION["nowa"] ?>" class="w-full focus:outline-none">
-            </div>
-            <div class="border border-slate-600 px-3 py-1 rounded-lg mb-3">
-                <h1 class="text-slate-600">Email</h1>
-                <input type="text" placeholder="<?= $_SESSION["email"] ?>" class="w-full focus:outline-none">
-            </div>
-            <div class="border border-slate-600 px-3 py-1 rounded-lg mb-3">
-                <h1 class="text-slate-600">Alamat</h1>
-                <input type="text" placeholder="<?= $_SESSION["alamat"] ?>" class="w-full focus:outline-none">
-            </div>
-        </form>
-    </div>
-
-    <footer class="footer-parent mt-24">
+    <footer class="footer-parent">
         <div class="mx-auto">
             <div class="footer-flex">
                 <div class="footer-left">
