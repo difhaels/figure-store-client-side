@@ -1,9 +1,31 @@
 <?php
 session_start();
+
+require '../function/client.php';
+
 if (!isset($_SESSION["login"])) {
     header("Location: ./login.php");
 }
 
+if (isset($_POST["send"])) {
+    // cek keberhasilan
+    if (transaction($_POST) > 0) {
+        header("Location: ./info.php");
+        exit;
+    } else {
+        echo "
+        <script>
+            alert('error akhir);
+        </script>
+        ";
+    }
+} else {
+    echo "
+        <script>
+            alert('error diawal);
+        </script>
+        ";
+}
 ?>
 
 <!DOCTYPE html>
@@ -65,32 +87,37 @@ if (!isset($_SESSION["login"])) {
 
         <div class="w-full lg:w-3/5 pt-16 lg:pt-28 px-10 pb-24">
             <h1 class="text-slate-700 text-lg">Client Information</h1>
-            <form action="" method="" enctype="multipart/form-data">
+
+            <form action="" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="item_image" value="<?= $_POST["image"] ?>">
+                <input type="hidden" name="item_name" value="<?= $_POST["name"] ?>">
+                <input type="hidden" name="item_price" value="<?= $_POST["price"] ?>">
+
                 <div class="border border-slate-600 px-3 py-2 rounded-lg mb-3">
                     <h1 class="text-slate-600">Username</h1>
-                    <input type="text" placeholder="<?= $_SESSION["username"] ?>" class="w-full focus:outline-none">
+                    <input type="text" placeholder="<?= $_SESSION["username"] ?>" name="username" class="w-full focus:outline-none">
                 </div>
                 <div class="border border-slate-600 px-3 py-1 rounded-lg mb-3">
                     <h1 class="text-slate-600">Nomer telepon</h1>
-                    <input type="text" placeholder="<?= $_SESSION["notlp"] ?>" class="w-full focus:outline-none">
+                    <input type="text" placeholder="<?= $_SESSION["notlp"] ?>" name="notlp" class="w-full focus:outline-none">
                 </div>
                 <div class="border border-slate-600 px-3 py-1 rounded-lg mb-3">
                     <h1 class="text-slate-600">Nomer whatsapp</h1>
-                    <input type="text" placeholder="<?= $_SESSION["nowa"] ?>" class="w-full focus:outline-none">
+                    <input type="text" placeholder="<?= $_SESSION["nowa"] ?>" name="nowa" class="w-full focus:outline-none">
                 </div>
                 <div class="border border-slate-600 px-3 py-1 rounded-lg mb-3">
                     <h1 class="text-slate-600">Email</h1>
-                    <input type="text" placeholder="<?= $_SESSION["email"] ?>" class="w-full focus:outline-none">
+                    <input type="text" placeholder="<?= $_SESSION["email"] ?>" name="email" class="w-full focus:outline-none">
                 </div>
                 <div class="border border-slate-600 px-3 py-1 rounded-lg mb-3">
                     <h1 class="text-slate-600">Alamat</h1>
-                    <input type="text" placeholder="<?= $_SESSION["alamat"] ?>" class="w-full focus:outline-none">
+                    <input type="text" placeholder="<?= $_SESSION["alamat"] ?>" name="alamat" class="w-full focus:outline-none">
                 </div>
                 <div>
                     <label for="payment">Upload proof of payment</label>
                     <input type="file" name="payment" id="payment">
                 </div>
-                <button type="submit" name="" class="button-green">Send</button>
+                <button type="submit" name="send" class="button-green">Send</button>
             </form>
 
         </div>

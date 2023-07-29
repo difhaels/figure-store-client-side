@@ -38,3 +38,16 @@ function register($data)
 
     return mysqli_affected_rows($koneksi);
 }
+
+function transaction($data)
+{
+    global $koneksi;
+
+    $item_name = $data["item_name"];
+    $item_image = $data["item_image"];
+    $item_price = $data["item_price"];
+
+    mysqli_query($koneksi, "INSERT INTO transaction(id, item_name, item_image, item_price, status) VALUES ('', '$item_name', '$item_image', '$item_price', 'menunggu konfirmasi')");
+
+    return mysqli_affected_rows($koneksi);
+}
