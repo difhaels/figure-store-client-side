@@ -4,7 +4,8 @@ module.exports = {
             "./item/detail.php",
             "./client/account.php",
             "./client/login.php",
-            "./client/register.php"],
+            "./client/register.php",
+            "./client/transaction.php"],
   theme: {
     extend: {
       colors: {

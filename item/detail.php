@@ -49,7 +49,7 @@ $item = read("SELECT * FROM item WHERE id = $id")[0];
         <div class="px-10 pt-[50px]">
 
             <h1 class="text-xl"><?= $item['source'] ?> - <?= $item['name'] ?> - <?= $item['type'] ?> #<?= $item['code'] ?></h1>
-            <a href="">
+            <a href="../client/transaction.php">
                 <div class="mt-3 bg-[#E7230D] w-[210px] rounded-lg text-white font-semibold px-5 py-3 flex justify-between">
                     <h1>Buy Now</h1>
                     <h1>Rp <?= number_format($item['price'], 0, ',', '.'); ?></h1>
