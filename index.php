@@ -23,22 +23,22 @@ if (isset($_GET['search'])) {
 </head>
 
 <body>
-    <nav class="bg-bg2 py-5 text-white flex items-center fixed w-full justify-between px-3 lg:px-10">
-        <div class="flex items-end">
-            <h1 class="font-extrabold text-xl lg:text-4xl">FIGURE STORE</h1>
-            <h1 class="text-xs lg:text-base">.client side</h1>
+    <nav class="bg-bg2 py-3 lg:py-5 text-white flex items-center fixed w-full justify-between px-3 lg:px-10">
+        <div class="flex items-center lg:items-end">
+            <h1 class="font-extrabold text-lg lg:text-4xl">FIGURE STORE</h1>
+            <h1 class="text-[9px] lg:text-base pt-2 lg:pt-0">.client side</h1>
         </div>
-        <div class="flex gap-2 lg:gap-6">
+        <div class="flex gap-3 lg:gap-6">
             <a href="./client/account.php">
-                <img src="./img/icon/user.png" class="w-[35px] change-color">
+                <img src="./img/icon/user.png" class="w-[25px] lg:w-[35px] change-color">
             </a>
             <a href="">
-                <img src="./img/icon/shop.png" class="w-[35px] change-color">
+                <img src="./img/icon/shop.png" class="w-[25px] lg:w-[35px] change-color">
             </a>
         </div>
     </nav>
 
-    <div class="px-3 lg:px-16 pt-24 lg:pt-32 pb-10 flex flex-wrap items-center justify-between gap-3">
+    <div class="px-3 lg:px-16 pt-16 lg:pt-32 pb-10 flex flex-wrap items-center justify-between gap-3">
         <!-- Search -->
         <form action="" method="get">
             <input type="text" name="key" placeholder="Cari Figure disini" autocomplete="off" class="px-1 py-1 border-2 focus:outline-none">

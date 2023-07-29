@@ -17,25 +17,23 @@ $item = read("SELECT * FROM item WHERE id = $id")[0];
 </head>
 
 <body>
-    <div class="bg-bg2 py-5 text-white flex items-center fixed w-full justify-between px-3 lg:px-10">
-        <div class="flex items-end">
-            <a href="../index.php">
-                <h1 class="font-extrabold text-xl lg:text-4xl">FIGURE STORE</h1>
-            </a>
-            <h1 class="text-xs lg:text-base">.client side</h1>
+    <nav class="bg-bg2 py-3 lg:py-5 text-white flex items-center fixed w-full justify-between px-3 lg:px-10">
+        <div class="flex items-center lg:items-end">
+            <h1 class="font-extrabold text-lg lg:text-4xl">FIGURE STORE</h1>
+            <h1 class="text-[9px] lg:text-base pt-2 lg:pt-0">.client side</h1>
         </div>
-        <div class="flex gap-2 lg:gap-6">
-            <a href="">
-                <img src="../img/icon/user.png" class="w-[35px] change-color">
+        <div class="flex gap-3 lg:gap-6">
+            <a href="../client/account.php">
+                <img src="../img/icon/user.png" class="w-[25px] lg:w-[35px] change-color">
             </a>
             <a href="">
-                <img src="../img/icon/shop.png" class="w-[35px] change-color">
+                <img src="../img/icon/shop.png" class="w-[25px] lg:w-[35px] change-color">
             </a>
         </div>
-    </div>
+    </nav>
 
-    <div class="pt-20 pb-10 px-3 lg:px-10 text-lg">
-        <h1><a href="../index.php">Home</a> > <a href="../index.php">item</a> > <span class="text-sky-500"><?= $item['source'] ?> - <?= $item['name'] ?></span></h1>
+    <div class="pt-16 lg:pt-20 pb-10 px-3 lg:px-10 text-lg">
+        <h1><a href="../index.php">Home</a> > <a href="../index.php">item</a> > <span class="text-sky-500"><?= $item['name'] ?>#<?= $item['code'] ?></span></h1>
     </div>
     <div class="flex flex-wrap justify-center px-5">
         <div class="px-10">
