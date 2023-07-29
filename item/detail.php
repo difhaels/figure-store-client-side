@@ -34,7 +34,10 @@ $item = read("SELECT * FROM item WHERE id = $id")[0];
         </div>
     </div>
 
-    <div class="pt-28 flex flex-wrap justify-center px-5">
+    <div class="pt-20 pb-10 px-3 lg:px-10 text-lg">
+        <h1><a href="../index.php">Home</a> > <a href="../index.php">item</a> > <span class="text-sky-500"><?= $item['source'] ?> - <?= $item['name'] ?></span></h1>
+    </div>
+    <div class="flex flex-wrap justify-center px-5">
         <div class="px-10">
             <img src="../img/item/<?= $item['image'] ?>" alt="<?= $item['code'] ?>" class="h-36 lg:h-56 mx-auto">
             <div class="flex justify-center gap-2 mt-2">
