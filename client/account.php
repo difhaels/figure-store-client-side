@@ -22,10 +22,9 @@ if (!isset($_SESSION["login"])) {
 
 <body>
     <nav class="bg-bg2 py-3 lg:py-5 text-white flex items-center fixed w-full justify-between px-3 lg:px-10">
-        <div class="flex items-center lg:items-end">
-            <h1 class="font-extrabold text-lg lg:text-4xl">FIGURE STORE</h1>
-            <h1 class="text-[9px] lg:text-base pt-2 lg:pt-0">.client side</h1>
-        </div>
+        <a href="../index.php">
+            <img src="../img/icon/back.png" alt="back" class="w-[25px] lg:w-[35px] change-color">
+        </a>
         <div class="flex gap-3 lg:gap-6">
             <a href="../client/account.php">
                 <img src="../img/icon/user.png" class="w-[25px] lg:w-[35px] change-color">
