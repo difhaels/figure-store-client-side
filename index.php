@@ -95,7 +95,7 @@ if (isset($_GET['search'])) {
             <div class="footer-flex">
                 <div class="footer-left">
                     <h2 class="footer-left-name">Difhaels</h2>
-                    <p>agungzeroenemy@gmail.com</p>
+                    <p>agungsaputradifh@gmail.com</p>
                     <p>Bogor, cileungsi</p>
                 </div>
                 <div class="footer-right">

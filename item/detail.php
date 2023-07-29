@@ -17,7 +17,7 @@ $item = read("SELECT * FROM item WHERE id = $id")[0];
 </head>
 
 <body>
-    <div class="bg-purple-700 py-5 text-white flex items-center fixed w-full justify-between px-3 lg:px-10">
+    <div class="bg-bg2 py-5 text-white flex items-center fixed w-full justify-between px-3 lg:px-10">
         <div class="flex items-end">
             <a href="../index.php">
                 <h1 class="font-extrabold text-xl lg:text-4xl">FIGURE STORE</h1>
@@ -99,7 +99,7 @@ $item = read("SELECT * FROM item WHERE id = $id")[0];
             <div class="footer-flex">
                 <div class="footer-left">
                     <h2 class="footer-left-name">Difhaels</h2>
-                    <p>agungzeroenemy@gmail.com</p>
+                    <p>agungsaputradifh@gmail.com</p>
                     <p>Bogor, cileungsi</p>
                 </div>
                 <div class="footer-right">
