@@ -49,6 +49,9 @@ $informations = read("SELECT * FROM transaction WHERE username = '$username'");
                 <h1>Status : <?= $information['status'] ?></h1>
             </div>
         <?php endforeach; ?>
+        <?php if (!$informations) : ?>
+            <h1>Anda harus melakukan pemesanan terlebih dahulu</h1>
+        <?php endif; ?>
     </div>
 
 
