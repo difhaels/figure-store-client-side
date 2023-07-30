@@ -12,19 +12,7 @@ if (isset($_POST["send"])) {
     if (transaction($_POST) > 0) {
         header("Location: ./info.php");
         exit;
-    } else {
-        echo "
-        <script>
-            alert('error akhir);
-        </script>
-        ";
     }
-} else {
-    echo "
-        <script>
-            alert('error diawal);
-        </script>
-        ";
 }
 ?>
 
@@ -114,9 +102,14 @@ if (isset($_POST["send"])) {
                     <h1 class="text-slate-600">Alamat</h1>
                     <input type="text" placeholder="<?= $_SESSION["alamat"] ?>" name="alamat" class="w-full focus:outline-none">
                 </div>
-                <div>
-                    <label for="payment">Upload proof of payment</label>
-                    <input type="file" name="payment" id="payment">
+                <div class="py-3">
+                    <div class="p-1 border border-slate-600">
+                        <h1>Tranfer hanya ke REK BCA : 8888UwU8888</h1>
+                        <h1>Tranfer harus sesuai total yang sudah ditentukan</h1>
+                        <h1>Upload bukti tranfer diperlukan</h1>
+                    </div>
+                    <label for="payment" class="pt-2">Upload proof of payment</label>
+                    <input type="file" name="payment" id="payment" required>
                 </div>
                 <button type="submit" name="send" class="button-green">Send</button>
             </form>
