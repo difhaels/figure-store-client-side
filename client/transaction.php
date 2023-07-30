@@ -44,10 +44,10 @@ if (isset($_POST["send"])) {
             <img src="../img/icon/back.png" alt="back" class="w-[25px] lg:w-[35px] change-color">
         </a>
         <div class="flex gap-3 lg:gap-6">
-            <a href="../client/account.php">
+            <a href="./account.php">
                 <img src="../img/icon/user.png" class="w-[25px] lg:w-[35px] change-color">
             </a>
-            <a href="">
+            <a href="./info.php">
                 <img src="../img/icon/shop.png" class="w-[25px] lg:w-[35px] change-color">
             </a>
         </div>
@@ -162,7 +162,6 @@ if (isset($_POST["send"])) {
             <p class="footer-dibuat">Dibuat dengan 💖 oleh <a href="https://instagram.com/difhaels" target="_blank" class="footer-name">Agung Saputra</a></p>
         </div>
     </footer>
-    <!-- footer end -->
 </body>
 
 </html>

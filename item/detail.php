@@ -25,7 +25,7 @@ $item = read("SELECT * FROM item WHERE id = $id")[0];
             <a href="../client/account.php">
                 <img src="../img/icon/user.png" class="w-[25px] lg:w-[35px] change-color">
             </a>
-            <a href="">
+            <a href="../client/info.php">
                 <img src="../img/icon/shop.png" class="w-[25px] lg:w-[35px] change-color">
             </a>
         </div>
