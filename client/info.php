@@ -1,5 +1,8 @@
 <?php
-echo "info";
+session_start();
+require '../function/functions.php';
+$username = $_SESSION['username'];
+$informations = read("SELECT * FROM transaction WHERE username = '$username'");
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +15,8 @@ echo "info";
     <link rel="stylesheet" href="../css/output.css">
 </head>
 
-<body>
-    <nav class="bg-bg2 py-3 lg:py-5 text-white flex items-center fixed w-full justify-between px-3 lg:px-10">
+<body class="bg-slate-200 ">
+    <nav class="bg-bg2 py-3 lg:py-5 text-white flex items-center fixed z-50 w-full justify-between px-3 lg:px-10">
         <a href="../index.php">
             <img src="../img/icon/back.png" alt="back" class="w-[25px] lg:w-[35px] change-color">
         </a>
@@ -26,6 +29,23 @@ echo "info";
             </a>
         </div>
     </nav>
+
+    <div class="py-20">
+        <?php foreach ($informations as $information) : ?>
+            <div class="bg-white w-[80%] lg:w-[35%] mx-auto px-3 py-4 rounded-lg my-5">
+                <div class="flex items-center relative">
+                    <img src="../img/item/<?= $information['item_image'] ?>" alt="<?= $information['item_name'] ?>" class="h-16">
+                    <h1 class="pl-3"><?= $information['item_name'] ?></h1>
+                    <h1 class="font-bold absolute right-3">Rp<?= number_format($information['item_price'], 0, ',', '.'); ?></h1>
+                </div>
+
+                <div class="bg-slate-200 h-[1px] w-[100%] mx-auto mt-3"></div>
+
+                <h1>Status : <?= $information['status'] ?></h1>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
 
     <footer class="footer-parent">
         <div class="mx-auto">

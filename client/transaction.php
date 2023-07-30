@@ -89,13 +89,14 @@ if (isset($_POST["send"])) {
             <h1 class="text-slate-700 text-lg">Client Information</h1>
 
             <form action="" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="username" value="<?= $_SESSION["username"] ?>">
                 <input type="hidden" name="item_image" value="<?= $_POST["image"] ?>">
                 <input type="hidden" name="item_name" value="<?= $_POST["name"] ?>">
-                <input type="hidden" name="item_price" value="<?= $_POST["price"] ?>">
+                <input type="hidden" name="item_price" value="<?= $total ?>">
 
                 <div class="border border-slate-600 px-3 py-2 rounded-lg mb-3">
                     <h1 class="text-slate-600">Username</h1>
-                    <input type="text" placeholder="<?= $_SESSION["username"] ?>" name="username" class="w-full focus:outline-none">
+                    <input type="text" placeholder="<?= $_SESSION["username"] ?>" name="usernameGimmick" class="w-full focus:outline-none">
                 </div>
                 <div class="border border-slate-600 px-3 py-1 rounded-lg mb-3">
                     <h1 class="text-slate-600">Nomer telepon</h1>
