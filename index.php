@@ -22,7 +22,7 @@ if (isset($_GET['search'])) {
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="body">
     <nav class="bg-bg2 py-3 lg:py-5 text-white flex items-center fixed w-full justify-between px-3 lg:px-10">
         <div class="flex items-center lg:items-end">
             <h1 class="font-extrabold text-lg lg:text-4xl">FIGURE STORE</h1>
@@ -47,7 +47,7 @@ if (isset($_GET['search'])) {
 
         <!-- Sort -->
         <form id="sortForm" action="" method="get">
-            <label for="sort">Sort By</label>
+            <label for="sort" class="text-white">Sort By</label>
             <select id="sort" name="sort" class="mx-2 px-3 py-1 rounded-lg">
                 <option value="">Normal</option>
                 <option value="newest" <?php if (isset($_GET['sort']) && $_GET['sort'] === 'newest') echo 'selected'; ?>>Newest</option>

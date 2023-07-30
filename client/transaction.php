@@ -43,10 +43,20 @@ if (isset($_POST["send"])) {
 
     <div class="flex justify-center flex-wrap">
         <div class="w-full lg:w-2/5 pt-16 lg:pt-28 bg-slate-200 pb-10 lg:pb-24">
+
+            <div class="relative pb-5">
+                <div class="bg-slate-600 h-[3px] w-[90%] mx-auto my-5"></div>
+                <div class="flex items-center text-slate-600 text-lg absolute -top-[14px] left-9 lg:left-16">
+                    <div class="bg-slate-200 border-2 border-slate-600 rounded-full mr-5 w-7 h-7 flex justify-center items-center">
+                        <h1>1</h1>
+                    </div>
+                    <h1 class="bg-slate-200">Item Information</h1>
+                </div>
+            </div>
+
             <div class="bg-white flex items-center w-[80%] mx-auto px-3 py-4 rounded-lg relative">
                 <img src="../img/item/<?= $_POST["image"] ?>" alt="image" class="h-16 pr-3">
                 <div class="pr-32">
-                    <h1 class="text-slate-600">Item info</h1>
                     <h1><?= $_POST["type"] ?> <?= $_POST["source"] ?> <?= $_POST["name"] ?></h1>
                 </div>
                 <h1 class="font-bold absolute right-3">Rp<?= number_format($_POST['price'], 0, ',', '.'); ?></h1>
@@ -55,7 +65,6 @@ if (isset($_POST["send"])) {
             <div class="bg-white flex items-center w-[80%] mx-auto px-3 py-4 rounded-lg mt-3 relative">
                 <img src="../img/icon/cost.png" alt="image" class="h-16 pr-3">
                 <div>
-                    <h1 class="text-slate-600">Item info</h1>
                     <h1>Shipping cost</h1>
                 </div>
                 <h1 class="font-bold absolute right-3">Rp 9.999.999</h1>
@@ -73,10 +82,18 @@ if (isset($_POST["send"])) {
 
         </div>
 
-        <div class="w-full lg:w-3/5 pt-16 lg:pt-28 px-10 pb-24">
-            <h1 class="text-slate-700 text-lg">Client Information</h1>
+        <div class="w-full lg:w-3/5 pt-16 lg:pt-28 pb-24">
+            <div class="relative pb-5">
+                <div class="bg-slate-600 h-[3px] w-[90%] mx-auto my-5"></div>
+                <div class="flex items-center text-slate-600 text-lg absolute -top-[14px] left-9 lg:left-16">
+                    <div class="bg-white border-2 border-slate-600 rounded-full mr-5 w-7 h-7 flex justify-center items-center">
+                        <h1>2</h1>
+                    </div>
+                    <h1 class="bg-white">Client Information</h1>
+                </div>
+            </div>
 
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="" method="post" enctype="multipart/form-data" class="px-10">
                 <input type="hidden" name="username" value="<?= $_SESSION["username"] ?>">
                 <input type="hidden" name="item_image" value="<?= $_POST["image"] ?>">
                 <input type="hidden" name="item_name" value="<?= $_POST["name"] ?>">

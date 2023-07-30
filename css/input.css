@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.body {
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-position: 50% 25%;
+  background-attachment: fixed;
+}
+
 .change-color {
     filter: invert(100%);
 }
