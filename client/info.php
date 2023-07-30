@@ -1,5 +1,10 @@
 <?php
 session_start();
+if (!isset($_SESSION["login"])) {
+    header("Location: ./login.php");
+    die;
+}
+
 require '../function/functions.php';
 $username = $_SESSION['username'];
 $informations = read("SELECT * FROM transaction WHERE username = '$username'");

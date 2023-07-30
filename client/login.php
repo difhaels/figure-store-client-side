@@ -35,7 +35,7 @@ if (isset($_POST["login"])) {
             }
 
             // pindah ke halaman index
-            header("Location: ./account.php");
+            header("Location: ../index.php");
             exit;
         } else {
             echo "

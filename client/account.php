@@ -7,6 +7,7 @@ if (isset($_COOKIE['key'])) {
 
 if (!isset($_SESSION["login"])) {
     header("Location: ./login.php");
+    die;
 }
 ?>
 
