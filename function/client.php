@@ -34,7 +34,7 @@ function register($data)
     }
 
     // tambahkan user baru ke database
-    mysqli_query($koneksi, "INSERT INTO client (id, username, password, notlp, nowa, alamat, email)  VALUES ('', '$username', '$password', '$notlp', '$nowa','$alamat','$email')");
+    mysqli_query($koneksi, "INSERT INTO client (username, password, notlp, nowa, alamat, email)  VALUES ('$username', '$password', '$notlp', '$nowa','$alamat','$email')");
 
     return mysqli_affected_rows($koneksi);
 }
@@ -48,7 +48,7 @@ function transaction($data)
     $item_image = $data["item_image"];
     $item_price = $data["item_price"];
 
-    mysqli_query($koneksi, "INSERT INTO transaction(id, username, item_name, item_image, item_price, status) VALUES ('', '$username', '$item_name', '$item_image', '$item_price', 'menunggu konfirmasi')");
+    mysqli_query($koneksi, "INSERT INTO transaction(username, item_name, item_image, item_price, status) VALUES ('$username', '$item_name', '$item_image', '$item_price', 'menunggu konfirmasi')");
 
     return mysqli_affected_rows($koneksi);
 }
