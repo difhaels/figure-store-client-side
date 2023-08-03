@@ -65,7 +65,51 @@ function transaction($data)
         $transaction_alamat = $data["alamat"];
     }
 
-    mysqli_query($koneksi, "INSERT INTO transaction(username, item_name, item_image, item_price, transaction_name, transaction_notlp, transaction_alamat, status) VALUES ('$username', '$item_name', '$item_image', '$item_price', '$transaction_name', '$transaction_notlp', '$transaction_alamat',  'menunggu konfirmasi')");
+    $stat = "menunggu konfirmasi";
+
+    // image bukti tranfer handle
+    $transaction_info = uploud_image('transaction_info', 'transaction');
+    var_dump($transaction_info);
+
+    $query = "INSERT INTO transaction (username, transaction_name, transaction_notlp, transaction_alamat, item_name, item_image, item_price, status, transaction_info) VALUES ('$username', '$transaction_name', '$transaction_notlp', '$transaction_alamat', '$item_name', '$item_image', '$item_price', '$stat', '$transaction_info')";
+
+    mysqli_query($koneksi, $query);
 
     return mysqli_affected_rows($koneksi);
+}
+
+
+function uploud_image($name, $folder_save)
+{
+    $namaFile = $_FILES[$name]['name'];
+    $ukuranFile = $_FILES[$name]['size'];
+    $tmpName = $_FILES[$name]['tmp_name'];
+
+    // cek yang diup gambar bukan
+    $ekstensiGambarValid = ['png', 'jpeg', 'jpg'];
+    $ekstensiGambar = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+        echo "
+        <script>
+            alert('Anda harus menguploud gambar');
+        </script>
+        ";
+        return false;
+    }
+
+    // cek ukuran gambar 2mb max
+    if ($ukuranFile > 2000000) {
+        echo "
+        <script>
+            alert('Ukuran file terlalu besar max 2 mb');
+        </script>
+        ";
+        return false;
+    }
+
+    move_uploaded_file($tmpName, '../img/' . $folder_save . '/' . $namaFile);
+
+    return $namaFile;
 }

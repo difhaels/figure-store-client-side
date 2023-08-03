@@ -120,8 +120,8 @@ if (isset($_POST["send"])) {
                         <h1>Tranfer harus sesuai total yang sudah ditentukan</h1>
                         <h1>Upload bukti tranfer diperlukan</h1>
                     </div>
-                    <label for="payment">Upload proof of payment</label>
-                    <input type="file" name="payment" id="payment" required class="py-3">
+                    <label for="transaction_info">Upload proof of payment</label>
+                    <input type="file" name="transaction_info" id="transaction_info" required class="py-3">
                 </div>
                 <button type="submit" name="send" class="button-green">Send</button>
             </form>
