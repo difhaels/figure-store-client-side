@@ -2,8 +2,8 @@
 
 require('../function/functions.php');
 
-$id = $_GET['id'];
-$item = read("SELECT * FROM item WHERE id = $id")[0];
+$id = $_GET['item_id'];
+$item = read("SELECT * FROM item WHERE item_id = $id")[0];
 ?>
 
 <!DOCTYPE html>
@@ -32,35 +32,35 @@ $item = read("SELECT * FROM item WHERE id = $id")[0];
     </nav>
 
     <div class="pt-16 lg:pt-20 pb-10 px-3 lg:px-10 text-lg">
-        <h1><a href="../index.php">Home</a> > <a href="../index.php">item</a> > <span class="text-sky-500"><?= $item['name'] ?>#<?= $item['code'] ?></span></h1>
+        <h1><a href="../index.php">Home</a> > <a href="../index.php">item</a> > <span class="text-sky-500"><?= $item['item_name'] ?>#<?= $item['item_code'] ?></span></h1>
     </div>
     <div class="flex flex-wrap justify-center px-5">
         <div class="px-10">
-            <img src="../img/item/<?= $item['image'] ?>" alt="<?= $item['code'] ?>" class="h-36 lg:h-56 mx-auto">
+            <img src="../img/item/<?= $item['item_image'] ?>" alt="<?= $item['item_code'] ?>" class="h-36 lg:h-56 mx-auto">
             <div class="flex justify-center gap-2 mt-2">
-                <img src="../img/sub/<?= $item['image1'] ?>" alt="<?= $item['code'] ?>1" class="h-36 lg:h-56">
-                <img src="../img/sub/<?= $item['image2'] ?>" alt="<?= $item['code'] ?>2" class="h-36 lg:h-56">
+                <img src="../img/sub/<?= $item['item_image1'] ?>" alt="<?= $item['item_code'] ?>1" class="h-36 lg:h-56">
+                <img src="../img/sub/<?= $item['item_image2'] ?>" alt="<?= $item['item_code'] ?>2" class="h-36 lg:h-56">
             </div>
             <div class="flex justify-center gap-2 mt-2">
-                <img src="../img/sub/<?= $item['image3'] ?>" alt="<?= $item['code'] ?>3" class="h-36 lg:h-56">
-                <img src="../img/sub/<?= $item['image4'] ?>" alt="<?= $item['code'] ?>4" class="h-36 lg:h-56">
+                <img src="../img/sub/<?= $item['item_image3'] ?>" alt="<?= $item['item_code'] ?>3" class="h-36 lg:h-56">
+                <img src="../img/sub/<?= $item['item_image4'] ?>" alt="<?= $item['item_code'] ?>4" class="h-36 lg:h-56">
             </div>
         </div>
         <div class="px-10 pt-[50px]">
 
-            <h1 class="text-xl"><?= $item['source'] ?> - <?= $item['name'] ?> - <?= $item['type'] ?> #<?= $item['code'] ?></h1>
+            <h1 class="text-xl"><?= $item['item_source'] ?> - <?= $item['item_name'] ?> - <?= $item['item_type'] ?> #<?= $item['item_code'] ?></h1>
 
             <!-- Form untuk mengirim data item ke transaction -->
             <form action="../client/transaction.php" method="post">
-                <input type="hidden" name="id" value="<?= $item['id'] ?>">
-                <input type="hidden" name="name" value="<?= $item['name'] ?>">
-                <input type="hidden" name="source" value="<?= $item['source'] ?>">
-                <input type="hidden" name="type" value="<?= $item['type'] ?>">
-                <input type="hidden" name="image" value="<?= $item['image'] ?>">
-                <input type="hidden" name="price" value="<?= $item['price'] ?>">
+                <input type="hidden" name="item_id" value="<?= $item['item_id'] ?>">
+                <input type="hidden" name="item_name" value="<?= $item['item_name'] ?>">
+                <input type="hidden" name="item_source" value="<?= $item['item_source'] ?>">
+                <input type="hidden" name="item_type" value="<?= $item['item_type'] ?>">
+                <input type="hidden" name="item_image" value="<?= $item['item_image'] ?>">
+                <input type="hidden" name="item_price" value="<?= $item['item_price'] ?>">
                 <button type="submit" class="mt-3 bg-[#E7230D] w-[210px] rounded-lg text-white font-semibold px-5 py-3 flex justify-between">
                     <h1>Buy Now</h1>
-                    <h1>Rp <?= number_format($item['price'], 0, ',', '.'); ?></h1>
+                    <h1>Rp <?= number_format($item['item_price'], 0, ',', '.'); ?></h1>
                 </button>
             </form>
 
@@ -85,15 +85,15 @@ $item = read("SELECT * FROM item WHERE id = $id")[0];
             <div class="pt-7 flex gap-10">
                 <div>
                     <h1 class="text-slate-400">Type</h1>
-                    <h1><?= $item['type'] ?></h1>
+                    <h1><?= $item['item_type'] ?></h1>
                 </div>
                 <div>
                     <h1 class="text-slate-400">Dimensions</h1>
-                    <h1><?= $item['dimensions'] ?></h1>
+                    <h1><?= $item['item_dimensions'] ?></h1>
                 </div>
                 <div>
                     <h1 class="text-slate-400">Material</h1>
-                    <h1><?= $item['material'] ?></h1>
+                    <h1><?= $item['item_material'] ?></h1>
                 </div>
             </div>
         </div>

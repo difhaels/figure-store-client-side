@@ -28,7 +28,7 @@ if (isset($_POST["send"])) {
 
 <body>
     <nav class="bg-bg2 py-3 lg:py-5 text-white flex items-center fixed z-50 w-full justify-between px-3 lg:px-10">
-        <a href="../item/detail.php?id=<?= $_POST['id'] ?>">
+        <a href="../item/detail.php?item_id=<?= $_POST['item_id'] ?>">
             <img src="../img/icon/back.png" alt="back" class="w-[25px] lg:w-[35px] change-color">
         </a>
         <div class="flex gap-3 lg:gap-6">
@@ -55,11 +55,11 @@ if (isset($_POST["send"])) {
             </div>
 
             <div class="bg-white flex items-center w-[80%] mx-auto px-3 py-4 rounded-lg relative">
-                <img src="../img/item/<?= $_POST["image"] ?>" alt="image" class="h-16 pr-3">
+                <img src="../img/item/<?= $_POST["item_image"] ?>" alt="image" class="h-16 pr-3">
                 <div class="pr-32">
-                    <h1><?= $_POST["type"] ?> <?= $_POST["source"] ?> <?= $_POST["name"] ?></h1>
+                    <h1><?= $_POST["item_type"] ?> <?= $_POST["item_source"] ?> <?= $_POST["item_name"] ?></h1>
                 </div>
-                <h1 class="font-bold absolute right-3">Rp<?= number_format($_POST['price'], 0, ',', '.'); ?></h1>
+                <h1 class="font-bold absolute right-3">Rp<?= number_format($_POST['item_price'], 0, ',', '.'); ?></h1>
             </div>
 
             <div class="bg-white flex items-center w-[80%] mx-auto px-3 py-4 rounded-lg mt-3 relative">
@@ -75,7 +75,7 @@ if (isset($_POST["send"])) {
             <div class="w-[80%] mx-auto mt-3 flex justify-between px-1 font-bold text-lg">
                 <h1>Total</h1>
                 <?php
-                $total = $_POST["price"] + 9999999;
+                $total = $_POST["item_price"] + 9999999;
                 ?>
                 <h1>Rp<?= number_format($total, 0, ',', '.'); ?></h1>
             </div>
@@ -95,8 +95,12 @@ if (isset($_POST["send"])) {
 
             <form action="" method="post" enctype="multipart/form-data" class="px-10">
                 <input type="hidden" name="username" value="<?= $_SESSION["username"] ?>">
-                <input type="hidden" name="item_image" value="<?= $_POST["image"] ?>">
-                <input type="hidden" name="item_name" value="<?= $_POST["name"] ?>">
+                <input type="hidden" name="item_image" value="<?= $_POST["item_image"] ?>">
+                <input type="hidden" name="item_name" value="<?= $_POST["item_name"] ?>">
+                <input type="hidden" name="item_name" value="<?= $_POST["item_name"] ?>">
+                <input type="hidden" name="item_name" value="<?= $_POST["item_name"] ?>">
+                <input type="hidden" name="item_name" value="<?= $_POST["item_name"] ?>">
+
                 <input type="hidden" name="item_price" value="<?= $total ?>">
 
                 <div class="border border-slate-600 px-3 py-2 rounded-lg mb-3">

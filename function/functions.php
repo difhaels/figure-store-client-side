@@ -18,7 +18,7 @@ function read($query)
 function search($key)
 {
     global $koneksi;
-    $query = "SELECT * FROM item WHERE name LIKE '%$key%' OR source LIKE '%$key%'";
+    $query = "SELECT * FROM item WHERE item_name LIKE '%$key%' OR item_source LIKE '%$key%'";
     mysqli_query($koneksi, $query);
     return $query;
 }
@@ -29,13 +29,13 @@ function sortItem($selectedSort)
 {
     global $koneksi;
     if ($selectedSort === "newest") {
-        $query = "SELECT * FROM item ORDER BY id DESC";
+        $query = "SELECT * FROM item ORDER BY item_id DESC";
     } else if ($selectedSort === "oldest") {
-        $query = "SELECT * FROM item ORDER BY id ASC";
+        $query = "SELECT * FROM item ORDER BY item_id ASC";
     } else if ($selectedSort === "highest") {
-        $query = "SELECT * FROM item ORDER BY price DESC";
+        $query = "SELECT * FROM item ORDER BY item_price DESC";
     } else if ($selectedSort === "lowest") {
-        $query = "SELECT * FROM item ORDER BY price ASC";
+        $query = "SELECT * FROM item ORDER BY item_price ASC";
     } else {
         $query = "SELECT * FROM item";
     }
