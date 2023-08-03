@@ -43,12 +43,29 @@ function transaction($data)
 {
     global $koneksi;
 
+    // username data
     $username = $data["username"];
+
+    // item data
     $item_name = $data["item_name"];
     $item_image = $data["item_image"];
     $item_price = $data["item_price"];
 
-    mysqli_query($koneksi, "INSERT INTO transaction(username, item_name, item_image, item_price, status) VALUES ('$username', '$item_name', '$item_image', '$item_price', 'menunggu konfirmasi')");
+    // transaction data
+    $transaction_name = $data["transaction_name"];
+    if (!$transaction_name) {
+        $transaction_name = $data["username"];
+    }
+    $transaction_notlp = $data["transaction_notlp"];
+    if (!$transaction_notlp) {
+        $transaction_notlp = $data["notlp"];
+    }
+    $transaction_alamat = $data["transaction_alamat"];
+    if (!$transaction_alamat) {
+        $transaction_alamat = $data["alamat"];
+    }
+
+    mysqli_query($koneksi, "INSERT INTO transaction(username, item_name, item_image, item_price, transaction_name, transaction_notlp, transaction_alamat, status) VALUES ('$username', '$item_name', '$item_image', '$item_price', '$transaction_name', '$transaction_notlp', '$transaction_alamat',  'menunggu konfirmasi')");
 
     return mysqli_affected_rows($koneksi);
 }

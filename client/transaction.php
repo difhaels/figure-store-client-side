@@ -95,33 +95,24 @@ if (isset($_POST["send"])) {
 
             <form action="" method="post" enctype="multipart/form-data" class="px-10">
                 <input type="hidden" name="username" value="<?= $_SESSION["username"] ?>">
+                <input type="hidden" name="notlp" value="<?= $_SESSION["notlp"] ?>">
+                <input type="hidden" name="alamat" value="<?= $_SESSION["alamat"] ?>">
                 <input type="hidden" name="item_image" value="<?= $_POST["item_image"] ?>">
-                <input type="hidden" name="item_name" value="<?= $_POST["item_name"] ?>">
-                <input type="hidden" name="item_name" value="<?= $_POST["item_name"] ?>">
-                <input type="hidden" name="item_name" value="<?= $_POST["item_name"] ?>">
                 <input type="hidden" name="item_name" value="<?= $_POST["item_name"] ?>">
 
                 <input type="hidden" name="item_price" value="<?= $total ?>">
 
                 <div class="border border-slate-600 px-3 py-2 rounded-lg mb-3">
                     <h1 class="text-slate-600">Username</h1>
-                    <input type="text" placeholder="<?= $_SESSION["username"] ?>" name="usernameGimmick" class="w-full focus:outline-none">
+                    <input type="text" placeholder="<?= $_SESSION["username"] ?>" name="transaction_name" class="w-full focus:outline-none">
                 </div>
                 <div class="border border-slate-600 px-3 py-1 rounded-lg mb-3">
                     <h1 class="text-slate-600">Nomer telepon</h1>
-                    <input type="text" placeholder="<?= $_SESSION["notlp"] ?>" name="notlp" class="w-full focus:outline-none">
-                </div>
-                <div class="border border-slate-600 px-3 py-1 rounded-lg mb-3">
-                    <h1 class="text-slate-600">Nomer whatsapp</h1>
-                    <input type="text" placeholder="<?= $_SESSION["nowa"] ?>" name="nowa" class="w-full focus:outline-none">
-                </div>
-                <div class="border border-slate-600 px-3 py-1 rounded-lg mb-3">
-                    <h1 class="text-slate-600">Email</h1>
-                    <input type="text" placeholder="<?= $_SESSION["email"] ?>" name="email" class="w-full focus:outline-none">
+                    <input type="text" placeholder="<?= $_SESSION["notlp"] ?>" name="transaction_notlp" class="w-full focus:outline-none">
                 </div>
                 <div class="border border-slate-600 px-3 py-1 rounded-lg mb-3">
                     <h1 class="text-slate-600">Alamat</h1>
-                    <input type="text" placeholder="<?= $_SESSION["alamat"] ?>" name="alamat" class="w-full focus:outline-none">
+                    <input type="text" placeholder="<?= $_SESSION["alamat"] ?>" name="transaction_alamat" class="w-full focus:outline-none">
                 </div>
                 <div class="py-3">
                     <div class="p-1 border border-slate-600">
@@ -129,8 +120,8 @@ if (isset($_POST["send"])) {
                         <h1>Tranfer harus sesuai total yang sudah ditentukan</h1>
                         <h1>Upload bukti tranfer diperlukan</h1>
                     </div>
-                    <label for="payment" class="pt-2">Upload proof of payment</label>
-                    <input type="file" name="payment" id="payment" required>
+                    <label for="payment">Upload proof of payment</label>
+                    <input type="file" name="payment" id="payment" required class="py-3">
                 </div>
                 <button type="submit" name="send" class="button-green">Send</button>
             </form>

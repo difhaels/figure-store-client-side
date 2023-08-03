@@ -76,7 +76,7 @@ if (isset($_GET['search'])) {
                         <h1 class="text-center py-2"><?= $item["item_name"] ?></h1>
                     </a>
                     <div class="px-5 flex justify-center items-center gap-5 mb-4">
-                        <a href="item/detail.php?id=<?= $item['item_id'] ?>" class="bg-[#E7230D] text-white px-3 py-2 rounded-[4px]">
+                        <a href="item/detail.php?item_id=<?= $item['item_id'] ?>" class="bg-[#E7230D] text-white px-3 py-2 rounded-[4px]">
                             <div class="text-center text-[13px]">
                                 <h1>PRE-ORDER</h1>
                                 <strong>Rp. <?= number_format($item['item_price'], 0, ',', '.'); ?></strong>

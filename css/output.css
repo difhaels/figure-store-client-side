@@ -710,10 +710,6 @@ video {
   width: 100%;
 }
 
-.w-32 {
-  width: 8rem;
-}
-
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -926,8 +922,8 @@ video {
   padding-top: 50px;
 }
 
-.pr-10 {
-  padding-right: 2.5rem;
+.pt-3 {
+  padding-top: 0.75rem;
 }
 
 .text-center {
