@@ -109,7 +109,11 @@ function uploud_image($name, $folder_save)
         return false;
     }
 
-    move_uploaded_file($tmpName, '../img/' . $folder_save . '/' . $namaFile);
+    $nameFileBaru = uniqid();
+    $nameFileBaru .= '.';
+    $nameFileBaru .= $ekstensiGambar;
 
-    return $namaFile;
+    move_uploaded_file($tmpName, '../img/' . $folder_save . '/' . $nameFileBaru);
+
+    return $nameFileBaru;
 }
