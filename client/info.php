@@ -46,7 +46,12 @@ $informations = read("SELECT * FROM transaction WHERE username = '$username'");
 
                 <div class="bg-slate-200 h-[1px] w-[100%] mx-auto mt-3"></div>
 
-                <h1>Status : <?= $information['status'] ?></h1>
+                <?php
+                $textColor = "";
+                $information["status"] === "sedang diproses!" ? $textColor = "text-green-500" :  $textColor =  "";
+                ?>
+                <h1 class="inline">Status : </h1>
+                <h1 class="<?= $textColor ?> inline"><?= $information['status'] ?></h1>
             </div>
         <?php endforeach; ?>
         <?php if (!$informations) : ?>

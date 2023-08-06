@@ -65,7 +65,7 @@ function transaction($data)
         $transaction_alamat = $data["alamat"];
     }
 
-    $stat = "menunggu konfirmasi";
+    $stat = "menunggu konfirmasi!";
 
     // image bukti tranfer handle
     $transaction_info = uploud_image('transaction_info', 'transaction');
