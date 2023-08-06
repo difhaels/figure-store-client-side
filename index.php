@@ -23,17 +23,17 @@ if (isset($_GET['search'])) {
 </head>
 
 <body class="body">
-    <nav class="bg-bg2 py-3 lg:py-5 text-white flex items-center fixed w-full justify-between px-3 lg:px-10">
+    <nav class="nav">
         <div class="flex items-center lg:items-end">
-            <h1 class="font-extrabold text-lg lg:text-4xl">FIGURE STORE</h1>
-            <h1 class="text-[9px] lg:text-base pt-2 lg:pt-0">.client side</h1>
+            <h1 class="nav-tittle">FIGURE STORE</h1>
+            <h1 class="nav-sub-tittle">.client side</h1>
         </div>
         <div class="flex gap-3 lg:gap-6">
             <a href="./client/account.php">
-                <img src="./img/icon/user.png" class="w-[25px] lg:w-[35px] change-color">
+                <img src="./img/icon/user.png" class="nav-a">
             </a>
             <a href="./client/info.php">
-                <img src="./img/icon/shop.png" class="w-[25px] lg:w-[35px] change-color">
+                <img src="./img/icon/shop.png" class="nav-a">
             </a>
         </div>
     </nav>
@@ -41,14 +41,14 @@ if (isset($_GET['search'])) {
     <div class="px-3 lg:px-16 pt-16 lg:pt-32 pb-10 flex flex-wrap items-center justify-between gap-3">
         <!-- Search -->
         <form action="" method="get">
-            <input type="text" name="key" placeholder="Cari Figure disini" autocomplete="off" class="px-1 py-1 border-2 focus:outline-none">
-            <button type="submit" name="search" class="bg-sky-400 text-slate-100 px-3 py-1">Search</button>
+            <input type="text" name="key" placeholder="Cari Figure disini" autocomplete="off" class="search">
+            <button type="submit" name="search" class="button-blue">Search</button>
         </form>
 
         <!-- Sort -->
         <form id="sortForm" action="" method="get">
             <label for="sort" class="text-white">Sort By</label>
-            <select id="sort" name="sort" class="mx-2 px-3 py-1 rounded-lg">
+            <select id="sort" name="sort" class="mx-2 px-3 py-1 ">
                 <option value="">Normal</option>
                 <option value="newest" <?php if (isset($_GET['sort']) && $_GET['sort'] === 'newest') echo 'selected'; ?>>Newest</option>
                 <option value="oldest" <?php if (isset($_GET['sort']) && $_GET['sort'] === 'oldest') echo 'selected'; ?>>Oldest</option>
@@ -67,16 +67,16 @@ if (isset($_GET['search'])) {
     </div>
 
     <div>
-        <div class="flex flex-wrap gap-3 justify-center">
+        <div class="items">
 
             <?php foreach ($items as $item) : ?>
-                <div class="bg-white w-44 lg:w-56 shadow-xl rounded-sm">
+                <div class="item">
                     <a href="item/detail.php?item_id=<?= $item['item_id'] ?>">
-                        <img src="./img/item/<?= $item["item_image"] ?>" alt="<?= $item["item_name"] ?>" class="h-40 mx-auto py-3 lg:py-1">
+                        <img src="./img/item/<?= $item["item_image"] ?>" alt="<?= $item["item_name"] ?>" class="item-image">
                         <h1 class="text-center py-2"><?= $item["item_name"] ?></h1>
                     </a>
                     <div class="px-5 flex justify-center items-center gap-5 mb-4">
-                        <a href="item/detail.php?item_id=<?= $item['item_id'] ?>" class="bg-[#E7230D] text-white px-3 py-2 rounded-[4px]">
+                        <a href="item/detail.php?item_id=<?= $item['item_id'] ?>" class="button-red">
                             <div class="text-center text-[13px]">
                                 <h1>PRE-ORDER</h1>
                                 <strong>Rp. <?= number_format($item['item_price'], 0, ',', '.'); ?></strong>
