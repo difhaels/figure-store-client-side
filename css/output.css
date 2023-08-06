@@ -613,10 +613,6 @@ video {
   margin-top: 1.25rem;
 }
 
-.mt-7 {
-  margin-top: 1.75rem;
-}
-
 .flex {
   display: flex;
 }
@@ -635,10 +631,6 @@ video {
 
 .h-16 {
   height: 4rem;
-}
-
-.h-36 {
-  height: 9rem;
 }
 
 .h-7 {
@@ -669,10 +661,6 @@ video {
   width: 100%;
 }
 
-.w-\[160px\] {
-  width: 160px;
-}
-
 .w-\[210px\] {
   width: 210px;
 }
@@ -691,11 +679,6 @@ video {
 
 .w-\[90\%\] {
   width: 90%;
-}
-
-.w-fit {
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 .w-full {
@@ -767,16 +750,6 @@ video {
 .bg-\[\#1B6B93\] {
   --tw-bg-opacity: 1;
   background-color: rgb(27 107 147 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#E7230D\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(231 35 13 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#EEEDED\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(238 237 237 / var(--tw-bg-opacity));
 }
 
 .bg-bg2 {
@@ -1133,6 +1106,72 @@ nav {
 
 /* Index End */
 
+/* Detail start */
+
+.navigate {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 4rem;
+  padding-bottom: 2.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+@media (min-width: 1024px) {
+  .navigate {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 5rem;
+  }
+}
+
+.detail-image {
+  height: 9rem;
+}
+
+@media (min-width: 1024px) {
+  .detail-image {
+    height: 14rem;
+  }
+}
+
+.flow {
+  margin-top: 1.75rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 237 237 / var(--tw-bg-opacity));
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.flow-text {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+.flow-icon {
+  display: flex;
+  width: 160px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Detail End */
+
 /*  Footer Start */
 
 .footer-parent {
@@ -1240,10 +1279,6 @@ nav {
     left: 4rem;
   }
 
-  .lg\:h-56 {
-    height: 14rem;
-  }
-
   .lg\:w-2\/5 {
     width: 40%;
   }
@@ -1289,10 +1324,6 @@ nav {
 
   .lg\:pb-24 {
     padding-bottom: 6rem;
-  }
-
-  .lg\:pt-20 {
-    padding-top: 5rem;
   }
 
   .lg\:pt-24 {

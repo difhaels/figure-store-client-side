@@ -17,33 +17,33 @@ $item = read("SELECT * FROM item WHERE item_id = $id")[0];
 </head>
 
 <body>
-    <nav class="bg-bg2 py-3 lg:py-5 text-white flex items-center fixed w-full justify-between px-3 lg:px-10">
+    <nav>
         <a href="../index.php">
-            <img src="../img/icon/back.png" alt="back" class="w-[25px] lg:w-[35px] change-color">
+            <img src="../img/icon/back.png" alt="back" class="nav-a">
         </a>
         <div class="flex gap-3 lg:gap-6">
             <a href="../client/account.php">
-                <img src="../img/icon/user.png" class="w-[25px] lg:w-[35px] change-color">
+                <img src="../img/icon/user.png" class="nav-a">
             </a>
             <a href="../client/info.php">
-                <img src="../img/icon/shop.png" class="w-[25px] lg:w-[35px] change-color">
+                <img src="../img/icon/shop.png" class="nav-a">
             </a>
         </div>
     </nav>
 
-    <div class="pt-16 lg:pt-20 pb-10 px-3 lg:px-10 text-lg">
+    <div class="navigate">
         <h1><a href="../index.php">Home</a> > <a href="../index.php">item</a> > <span class="text-sky-500"><?= $item['item_name'] ?>#<?= $item['item_code'] ?></span></h1>
     </div>
     <div class="flex flex-wrap justify-center px-5">
         <div class="px-10">
-            <img src="../img/item/<?= $item['item_image'] ?>" alt="<?= $item['item_code'] ?>" class="h-36 lg:h-56 mx-auto">
+            <img src="../img/item/<?= $item['item_image'] ?>" alt="<?= $item['item_code'] ?>" class="detail-image mx-auto">
             <div class="flex justify-center gap-2 mt-2">
-                <img src="../img/sub/<?= $item['item_image1'] ?>" alt="<?= $item['item_code'] ?>1" class="h-36 lg:h-56">
-                <img src="../img/sub/<?= $item['item_image2'] ?>" alt="<?= $item['item_code'] ?>2" class="h-36 lg:h-56">
+                <img src="../img/sub/<?= $item['item_image1'] ?>" alt="<?= $item['item_code'] ?>1" class="detail-image">
+                <img src="../img/sub/<?= $item['item_image2'] ?>" alt="<?= $item['item_code'] ?>2" class="detail-image">
             </div>
             <div class="flex justify-center gap-2 mt-2">
-                <img src="../img/sub/<?= $item['item_image3'] ?>" alt="<?= $item['item_code'] ?>3" class="h-36 lg:h-56">
-                <img src="../img/sub/<?= $item['item_image4'] ?>" alt="<?= $item['item_code'] ?>4" class="h-36 lg:h-56">
+                <img src="../img/sub/<?= $item['item_image3'] ?>" alt="<?= $item['item_code'] ?>3" class="detail-image">
+                <img src="../img/sub/<?= $item['item_image4'] ?>" alt="<?= $item['item_code'] ?>4" class="detail-image">
             </div>
         </div>
         <div class="px-10 pt-[50px]">
@@ -58,24 +58,24 @@ $item = read("SELECT * FROM item WHERE item_id = $id")[0];
                 <input type="hidden" name="item_type" value="<?= $item['item_type'] ?>">
                 <input type="hidden" name="item_image" value="<?= $item['item_image'] ?>">
                 <input type="hidden" name="item_price" value="<?= $item['item_price'] ?>">
-                <button type="submit" class="mt-3 bg-[#E7230D] w-[210px] rounded-lg text-white font-semibold px-5 py-3 flex justify-between">
+                <button type="submit" class="mt-3  w-[210px] font-semibold flex justify-between button-red">
                     <h1>Buy Now</h1>
                     <h1>Rp <?= number_format($item['item_price'], 0, ',', '.'); ?></h1>
                 </button>
             </form>
 
-            <div class="mt-7 px-5 border border-black rounded-lg w-fit bg-[#EEEDED]">
-                <h1 class="text-xl font-bold py-3">Transaction Flow</h1>
+            <div class="flow">
+                <h1 class="flow-text">Transaction Flow</h1>
                 <div class="flex flex-wrap justify-center gap-2 lg:gap-3 pb-5">
-                    <div class="w-[160px] bg-white rounded-lg flex items-center justify-center gap-3 py-2">
+                    <div class="flow-icon">
                         <img src="../img/icon/transfer.png" alt="transfer" class="h-10">
                         <h1>Transfer</h1>
                     </div>
-                    <div class="w-[160px] bg-white rounded-lg flex items-center justify-center gap-3 py-2">
+                    <div class="flow-icon">
                         <img src="../img/icon/send.png" alt="send" class="h-10">
                         <h1>Send</h1>
                     </div>
-                    <div class="w-[160px] bg-white rounded-lg flex items-center justify-center gap-3 py-2">
+                    <div class="flow-icon">
                         <img src="../img/icon/receive.png" alt="receive" class="h-10">
                         <h1>Receive</h1>
                     </div>

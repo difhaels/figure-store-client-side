@@ -55,6 +55,23 @@ nav {
 }
 /* Index End */
 
+/* Detail start */
+.navigate {
+  @apply pt-16 lg:pt-20 pb-10 px-3 lg:px-10 text-lg;
+}
+.detail-image {
+  @apply h-36 lg:h-56;
+}
+.flow {
+  @apply mt-7 px-5 border border-black rounded-lg w-fit bg-[#EEEDED];
+}
+.flow-text {
+  @apply text-xl font-bold py-3;
+}
+.flow-icon {
+  @apply w-[160px] bg-white rounded-lg flex items-center justify-center gap-3 py-2;
+}
+/* Detail End */
 
 /*  Footer Start */
 .footer-parent {
