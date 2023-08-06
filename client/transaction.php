@@ -27,16 +27,16 @@ if (isset($_POST["send"])) {
 </head>
 
 <body>
-    <nav class="bg-bg2 py-3 lg:py-5 text-white flex items-center fixed z-50 w-full justify-between px-3 lg:px-10">
+    <nav>
         <a href="../item/detail.php?item_id=<?= $_POST['item_id'] ?>">
-            <img src="../img/icon/back.png" alt="back" class="w-[25px] lg:w-[35px] change-color">
+            <img src="../img/icon/back.png" alt="back" class="nav-a">
         </a>
         <div class="flex gap-3 lg:gap-6">
             <a href="./account.php">
-                <img src="../img/icon/user.png" class="w-[25px] lg:w-[35px] change-color">
+                <img src="../img/icon/user.png" class="nav-a">
             </a>
             <a href="./info.php">
-                <img src="../img/icon/shop.png" class="w-[25px] lg:w-[35px] change-color">
+                <img src="../img/icon/shop.png" class="nav-a">
             </a>
         </div>
     </nav>
