@@ -9,7 +9,7 @@ function register($data)
     $password2 = mysqli_real_escape_string($koneksi, $data["password2"]);
     $notlp = $data["notlp"];
     $nowa = $data["nowa"];
-    $alamat = $data["alamat"];
+    $address = $data["address"];
     $email = $data["email"];
 
     // username yang sudah digunakan
@@ -34,7 +34,7 @@ function register($data)
     }
 
     // tambahkan user baru ke database
-    mysqli_query($koneksi, "INSERT INTO client (username, password, notlp, nowa, alamat, email)  VALUES ('$username', '$password', '$notlp', '$nowa','$alamat','$email')");
+    mysqli_query($koneksi, "INSERT INTO client (username, password, notlp, nowa, address, email)  VALUES ('$username', '$password', '$notlp', '$nowa','$address','$email')");
 
     return mysqli_affected_rows($koneksi);
 }

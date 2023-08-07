@@ -43,7 +43,7 @@ if (isset($_POST["register"])) {
                     <input type="text" name="nowa" placeholder="Nomer Whatsapp" class="w-full h-10 border-2 border-black rounded-lg px-3">
                 </li>
                 <li class="py-1">
-                    <input type="text" name="alamat" placeholder="Alamat" class="w-full h-10 border-2 border-black rounded-lg px-3">
+                    <input type="text" name="address" placeholder="Alamat" class="w-full h-10 border-2 border-black rounded-lg px-3">
                 </li>
                 <li class="py-1">
                     <input type="text" name="email" placeholder="Email" class="w-full h-10 border-2 border-black rounded-lg px-3">

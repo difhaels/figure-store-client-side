@@ -25,7 +25,7 @@ if (isset($_POST["login"])) {
             $_SESSION["username"] = $_POST["username"];
             $_SESSION["notlp"] = $row["notlp"];
             $_SESSION["nowa"] = $row["nowa"];
-            $_SESSION["alamat"] = $row["alamat"];
+            $_SESSION["address"] = $row["address"];
             $_SESSION["email"] = $row["email"];
 
             // cek remember me di centang tidak
