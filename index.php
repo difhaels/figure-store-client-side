@@ -20,6 +20,8 @@ if (isset($_POST['search'])) {
     <title>Figure Store Client Site</title>
     <link rel="stylesheet" href="./css/output.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="javascript/jquery.js"></script>
+    <script src="javascript/script.js"></script>
 </head>
 
 <body class="body">
@@ -129,7 +131,7 @@ if (isset($_POST['search'])) {
         </div>
     </footer>
     <!-- footer end -->
-    <script src="javascript/script.js"></script>
+
 </body>
 
 </html>
