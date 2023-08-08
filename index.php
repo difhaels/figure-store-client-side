@@ -42,9 +42,10 @@ if (isset($_POST['search'])) {
 
     <div class="px-3 lg:px-16 pt-16 lg:pt-32 pb-10 flex flex-wrap items-center justify-between gap-3">
         <!-- Search -->
-        <form action="" method="post">
+        <form action="" method="post" class="flex gap-3">
             <input type="text" name="key" placeholder="Cari Figure disini" autocomplete="off" class="search" id="key">
             <button type="submit" name="search" class="button-blue" id="search">Search</button>
+            <img src="./img/icon/loader.gif" class="h-8 loader hidden">
         </form>
 
         <!-- Sort -->

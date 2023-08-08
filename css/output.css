@@ -649,6 +649,14 @@ video {
   height: 100vh;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
+.h-8 {
+  height: 2rem;
+}
+
 .w-7 {
   width: 1.75rem;
 }
