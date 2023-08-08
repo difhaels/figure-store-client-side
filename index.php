@@ -1,8 +1,8 @@
 <?php
 require('function/functions.php');
 
-if (isset($_GET['search'])) {
-    $items = read(search($_GET["key"]));
+if (isset($_POST['search'])) {
+    $items = read(search($_POST["key"]));
 } else if (isset($_GET['sort'])) {
     $items = read(sortItem($_GET['sort']));
 } else {
@@ -40,9 +40,9 @@ if (isset($_GET['search'])) {
 
     <div class="px-3 lg:px-16 pt-16 lg:pt-32 pb-10 flex flex-wrap items-center justify-between gap-3">
         <!-- Search -->
-        <form action="" method="get">
-            <input type="text" name="key" placeholder="Cari Figure disini" autocomplete="off" class="search">
-            <button type="submit" name="search" class="button-blue">Search</button>
+        <form action="" method="post">
+            <input type="text" name="key" placeholder="Cari Figure disini" autocomplete="off" class="search" id="key">
+            <button type="submit" name="search" class="button-blue" id="search">Search</button>
         </form>
 
         <!-- Sort -->
@@ -66,28 +66,27 @@ if (isset($_GET['search'])) {
         </script>
     </div>
 
-    <div>
-        <div class="items">
+    <div class="items" id="items">
 
-            <?php foreach ($items as $item) : ?>
-                <div class="item">
-                    <a href="item/detail.php?item_id=<?= $item['item_id'] ?>">
-                        <img src="./img/item/<?= $item["item_image"] ?>" alt="<?= $item["item_name"] ?>" class="item-image">
-                        <h1 class="text-center py-2"><?= $item["item_name"] ?></h1>
+        <?php foreach ($items as $item) : ?>
+            <div class="item">
+                <a href="item/detail.php?item_id=<?= $item['item_id'] ?>">
+                    <img src="./img/item/<?= $item["item_image"] ?>" alt="<?= $item["item_name"] ?>" class="item-image">
+                    <h1 class="text-center py-2"><?= $item["item_name"] ?></h1>
+                </a>
+                <div class="px-5 flex justify-center items-center gap-5 mb-4">
+                    <a href="item/detail.php?item_id=<?= $item['item_id'] ?>" class="button-red">
+                        <div class="text-center text-[13px]">
+                            <h1>PRE-ORDER</h1>
+                            <strong>Rp. <?= number_format($item['item_price'], 0, ',', '.'); ?></strong>
+                        </div>
                     </a>
-                    <div class="px-5 flex justify-center items-center gap-5 mb-4">
-                        <a href="item/detail.php?item_id=<?= $item['item_id'] ?>" class="button-red">
-                            <div class="text-center text-[13px]">
-                                <h1>PRE-ORDER</h1>
-                                <strong>Rp. <?= number_format($item['item_price'], 0, ',', '.'); ?></strong>
-                            </div>
-                        </a>
-                    </div>
                 </div>
-            <?php endforeach; ?>
+            </div>
+        <?php endforeach; ?>
 
-        </div>
     </div>
+
 
     <!-- footer start -->
     <footer class="footer-parent mt-10">
@@ -130,6 +129,7 @@ if (isset($_GET['search'])) {
         </div>
     </footer>
     <!-- footer end -->
+    <script src="javascript/script.js"></script>
 </body>
 
 </html>
