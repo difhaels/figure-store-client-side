@@ -1,5 +1,4 @@
-$(document).ready(function () {
-    
+jQuery(function(){
     // hilangkan tombol cari
     $('#search').hide();
 
